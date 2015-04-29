@@ -163,7 +163,7 @@
 				scene = new THREE.Scene();
 
 				// table
-var z;
+var my_x=0, my_y=1, z;
 
 				for ( var i = 0; i < table.length; i += 5 ) {
 
@@ -186,9 +186,16 @@ element.src = 'img/Img' + z + '.jpg';
 
 					//
 
+
+if (my_x > 11) {
+	
+	my_x = 0;
+	my_y = my_y +1;
+}
+my_x = my_x +1;
 					var object = new THREE.Object3D();
-					object.position.x = ( table[ i + 3 ] * 140 ) - 1330;
-					object.position.y = - ( table[ i + 4 ] * 180 ) + 990;
+					object.position.x = ( my_x * 250 ) - 1580;
+					object.position.y = - ( my_y * 180 ) + 990;
 
 					targets.table.push( object );
 
