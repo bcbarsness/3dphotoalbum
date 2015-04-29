@@ -8,6 +8,7 @@
 		<link href="main.css" rel="stylesheet">
 		
 	</head>
+
 	<body>
 		<script src="three.min.js"></script>
 		<script src="tween.min.js"></script>
@@ -162,12 +163,18 @@
 				scene = new THREE.Scene();
 
 				// table
+var z;
 
 				for ( var i = 0; i < table.length; i += 5 ) {
 
 					var element = document.createElement( 'img' );
 element.className = 'element';
-element.src = 'ball.jpg';
+z = i/5; 
+z= z % 45 + 1;
+
+element.src = 'img/Img' + z + '.jpg';
+//element.style.opacity = '.7';
+
 
 					var object = new THREE.CSS3DObject( element );
 					object.position.x = Math.random() * 4000 - 2000;
