@@ -41,17 +41,13 @@
 				scene = new THREE.Scene();
 
 				// plane
-var my_x=0, my_y=1, z;
+				var row=1, column=1;
 
-				for ( var i = 0; i < 600; i += 5 ) {
+				for ( var i = 0; i < 120; i += 1 ) {
 
 					var element = document.createElement( 'img' );
-element.className = 'element';
-z = i/5; 
-z= z % 45 + 1;
-
-element.src = 'img/Img' + z + '.jpg';
-//element.style.opacity = '.7';
+					element.className = 'element';
+					element.src = 'img/IMG' + i + '.jpg';
 
 
 					var object = new THREE.CSS3DObject( element );
@@ -65,15 +61,16 @@ element.src = 'img/Img' + z + '.jpg';
 					//
 
 
-if (my_x > 11) {
-	
-	my_x = 0;
-	my_y = my_y +1;
-}
-my_x = my_x +1;
+					if (column > 12) {
+						row++
+						column = 1;
+					}
+					
 					var object = new THREE.Object3D();
-					object.position.x = ( my_x * 250 ) - 1580;
-					object.position.y = - ( my_y * 180 ) + 990;
+					object.position.x = ( column * 250 ) - 1580;
+					object.position.y = - ( row * 180 ) + 990;
+
+					column++;
 
 					targets.plane.push( object );
 
